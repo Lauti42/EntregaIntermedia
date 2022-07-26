@@ -1,0 +1,34 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block bloqueQueCambia %}
+
+
+
+    <header class="bg-dark py-3">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Plataformas</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Seccion de formulario para crear nueva plataforma de juegos.</p>
+            </div>
+        </div>
+    </header>
+
+    <form action="{% url 'formularioplataforma' %}" method="POST"> {% csrf_token %}
+        
+
+        <table>
+            
+            <p>Nombre: <input type="text" name="nombre"> </p>
+
+            <p>Juegos: <input type="text" name="juegos"> </p>
+
+            <p>Link: <input type="text" name="link"> </p>
+
+        </table>
+        
+        <input type="submit" value="Enviar">
+    </form>
+
+{% endblock bloqueQueCambia %}

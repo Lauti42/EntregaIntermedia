@@ -1,0 +1,35 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block bloqueQueCambia %}
+
+
+
+    <header class="bg-dark py-3">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Juegos</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Seccion de formulario para crear un nuevo juego.</p>
+            </div>
+        </div>
+    </header>
+
+    <form action="{% url 'formulariojuegos' %}" method="POST"> {% csrf_token %}
+        
+
+        <table>
+            
+            <p>Nombre: <input type="text" name="nombre"> </p>
+
+            <p>Año de creación: <input type="number" name="anodecreacion"> </p>
+
+            <p>Desarrollador: <input type="text" name="desarrollador"> </p>
+
+            <p>Género: <input type="text" name="genero"> </p>
+        </table>
+        
+        <input type="submit" value="Enviar">
+    </form>
+
+{% endblock bloqueQueCambia %}
